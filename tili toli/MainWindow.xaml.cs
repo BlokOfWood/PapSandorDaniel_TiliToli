@@ -20,9 +20,21 @@ namespace tili_toli
     /// </summary>
     public partial class MainWindow : Window
     {
+        UIElementCollection tiliToliElemek;  
         public MainWindow()
         {
             InitializeComponent();
+            tiliToliElemek = elemTartó.Children;
+
+            for (int i = 0; i < tiliToliElemek.Count; i++)
+            {
+                (tiliToliElemek[i] as Button).Content = (i + 1).ToString();
+            }
+        }
+
+        private void newgame_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
