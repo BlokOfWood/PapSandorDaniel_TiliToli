@@ -19,6 +19,7 @@
             <Button Content="Button" HorizontalAlignment="Left" Margin="174,226,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_7"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="346,226,0,0" VerticalAlignment="Top" Width="120" Height="97" RenderTransformOrigin="0.52,2.276" Click="Button_Click_8"/>
         </Grid>
+        <TextBlock x:Name="Győzelem" HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="Nyertél"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>

@@ -34,8 +34,13 @@ namespace tili_toli
                 {0,1,2},{3,4,5},{6,7,8}
             };
             Shuffle();
-
             UpdateUI();
+
+            Győzelem.Visibility = Visibility.Hidden;
+            foreach (var i in tiliToliElemek)
+            {
+                (i as Button).IsEnabled = true;
+            }
         }
 
         void Shuffle()
@@ -70,6 +75,22 @@ namespace tili_toli
                     (tiliToliElemek[i] as Button).Content = flatArray[i].ToString();
                 }
             }
+        }
+
+        bool CheckWin()
+        {
+            List<byte> tempsorted = tilitoliState.Cast<byte>().ToList();
+            tempsorted.Sort();
+            tempsorted.RemoveAt(0);
+            List<byte> tempbase = tilitoliState.Cast<byte>().ToList();
+            tempbase.RemoveAt(8);
+
+            for(int i = 0; i < 8; i++)
+            {
+                if (tempsorted[i] != tempbase[i]) return false;
+            }
+
+            return true;
         }
 
         void ButtonClick(int index)
@@ -109,6 +130,15 @@ namespace tili_toli
                 tilitoliState[i[0], i[1]] = b;
             }
             UpdateUI();
+
+            if(CheckWin())
+            {
+                foreach (var button in tiliToliElemek)
+                {
+                    (button as Button).IsEnabled = false;
+                    Győzelem.Visibility = Visibility.Visible;
+                }
+            }
         }
 
         private void newgame_Click(object sender, RoutedEventArgs e)
