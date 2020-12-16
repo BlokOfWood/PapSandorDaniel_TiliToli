@@ -21,12 +21,15 @@ namespace tili_toli
     public partial class MainWindow : Window
     {
         byte[,] tilitoliState;
-        UIElementCollection tiliToliElemek;  
+        UIElementCollection tiliToliElemek;
         public MainWindow()
         {
             InitializeComponent();
             tiliToliElemek = elemTartó.Children;
-
+            NewGame();
+        }
+        void NewGame()
+        {
             tilitoliState = new byte[,]{
                 {0,1,2},{3,4,5},{6,7,8}
             };
