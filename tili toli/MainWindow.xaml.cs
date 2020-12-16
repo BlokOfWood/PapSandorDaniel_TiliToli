@@ -31,7 +31,7 @@ namespace tili_toli
         public void NewGame()
         {
             tilitoliState = new byte[,]{
-                {1,2,3},{4,5,6},{7,8,9}
+                {0,1,2},{3,4,5},{6,7,8}
             };
             Shuffle();
 
@@ -62,7 +62,13 @@ namespace tili_toli
             byte[] flatArray = tilitoliState.Cast<byte>().ToArray();
             for(int i = 0; i < 9; i++)
             {
-                (tiliToliElemek[i] as Button).Content = flatArray[i].ToString();
+                if (flatArray[i] == 0)
+                    (tiliToliElemek[i] as Button).Visibility = Visibility.Hidden;
+                else
+                {
+                    (tiliToliElemek[i] as Button).Visibility = Visibility.Visible;
+                    (tiliToliElemek[i] as Button).Content = flatArray[i].ToString();
+                }
             }
         }
 
