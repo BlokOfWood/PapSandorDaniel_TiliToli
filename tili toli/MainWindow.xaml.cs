@@ -19,13 +19,13 @@ namespace tili_toli
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /* Szerintem érthetően neveztem el a változókat és átláthatóan rendeztem a kódom, 
-     * így csak szükség esetén kommentáltam, amikor ránézésre szerintem nem nyilvánvaló, hogy mit csinál.
+     * ezért csak szükség esetén kommentáltam, amikor ránézésre szerintem nem nyilvánvaló, hogy mit csinál.
      * (valami olyasfajta gondolatmenetet tartalmaz, ami nem azonnal nyilvánvaló, vagy nem tudtam érthetően elnevezni)
      * Például nem akartam odaírni a NewGame()-hez, hogy új játékot indít.*/
     public partial class MainWindow : Window
     {
         /// <summary>
-        /// A tilitoli négyzeteinek elhelyezkedése számszerint. 
+        /// A tilitoli négyzeteinek elhelyezkedése szám szerint. 
         /// </summary>
         byte[,] tilitoliState;
         int stepsTaken = 0;
@@ -93,19 +93,16 @@ namespace tili_toli
 
         bool CheckWin()
         {
-            //Létre hoz egy változatot a listáról, amit növekvő sorrendbe rendez és egyet, amit nem. 
+            //Létrehoz egy változatot a listáról, amit növekvő sorrendbe rendez és egyet, amit nem. 
             //Ha megegyezik, akkor már eddig is növekvő sorrendben volt tehát nyert a játékos.
             List<byte> tempsorted = tilitoliState.Cast<byte>().ToList();
-            //Azt feltételezzük, hogy csak akkor nyertes a játék állapot ha pontosan a jobb alsó négyzet üres.
-            //Ha .Remove(0) lenne, akkor eltávolítaná a 0-st bárhol is van, így csak a sorrend számítana, de ez túl egyszerűvé tenné a játékot.
-            tempsorted.RemoveAt(8);
             tempsorted.Sort();
+            tempsorted.RemoveAt(0);
             List<byte> tempbase = tilitoliState.Cast<byte>().ToList();
-            //Fenti magyarázat vonatkozik.
+            //Azt feltételezzük, hogy csak akkor nyertes a játék állapot, ha a jobb alsó négyzet üres.
+            //Ha .Remove(0) lenne, akkor eltávolítaná a 0-t bárhol is van, így csak a sorrend számítana, de ez túl egyszerűvé tenné a játékot.
             tempbase.RemoveAt(8);
 
-            //Legjobb tudásom szerint nincs beépített tömb összehasonlító eljárás, 
-            //így megírtam egy egyszerű változatot.
             for(int i = 0; i < 8; i++)
             {
                 if (tempsorted[i] != tempbase[i]) return false;
@@ -122,7 +119,7 @@ namespace tili_toli
         /// </param>
         void ButtonClick(int index)
         {
-            //Egy rövidítés a kiválaszott négyzet 2d-s indexére.
+            //Egy rövidítés a kiválaszott négyzet 2d-s indexéről.
             int[] i = { index / 3, index % 3 };
 
             //Végignézi a 4 szomszédos négyzetet, hogy üresek-e.
