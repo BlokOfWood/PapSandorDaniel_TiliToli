@@ -21,6 +21,7 @@ namespace tili_toli
     public partial class MainWindow : Window
     {
         byte[,] tilitoliState;
+        int stepsTaken = 0;
         UIElementCollection tiliToliElemek;
         public MainWindow()
         {
@@ -28,8 +29,11 @@ namespace tili_toli
             tiliToliElemek = elemTartó.Children;
             NewGame();
         }
+
         public void NewGame()
         {
+            stepsTaken = 0;
+
             tilitoliState = new byte[,]{
                 {0,1,2},{3,4,5},{6,7,8}
             };
@@ -75,6 +79,8 @@ namespace tili_toli
                     (tiliToliElemek[i] as Button).Content = flatArray[i].ToString();
                 }
             }
+
+            StepCounter.Text = stepsTaken.ToString();
         }
 
         bool CheckWin()
@@ -129,6 +135,14 @@ namespace tili_toli
                 tilitoliState[i[0], i[1] + 1] = a;
                 tilitoliState[i[0], i[1]] = b;
             }
+            else
+            {
+                //Így, hogyha a megtett lépés nem eredményes, akkor levon egyet előre, ezért a végeredmény az, hogy a számláló nem változik.
+                //Elegánsabb, mint minden hova berakni a stepsTaken++ utasítást.
+                stepsTaken--;
+            }
+
+            stepsTaken++;
             UpdateUI();
 
             if(CheckWin())

@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tili_toli"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="492.631">
+        Title="MainWindow" Height="474.5" Width="492.631">
     <Grid>
-        <Button x:Name="newgame" Content="Új Játék" HorizontalAlignment="Left" Margin="163,10,0,0" VerticalAlignment="Top" Width="166" Click="newgame_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="newgame" Content="Új Játék" HorizontalAlignment="Center" Margin="160,10,160.857,0" VerticalAlignment="Top" Width="166" Click="newgame_Click"/>
         <Grid x:Name="elemTartó" HorizontalAlignment="Left" Height="323" Margin="11,64,0,0" VerticalAlignment="Top" Width="466">
             <Button Content="Button" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="174,3,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_1"/>
@@ -19,7 +22,9 @@
             <Button Content="Button" HorizontalAlignment="Left" Margin="174,226,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_7"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="346,226,0,0" VerticalAlignment="Top" Width="120" Height="97" RenderTransformOrigin="0.52,2.276" Click="Button_Click_8"/>
         </Grid>
-        <TextBlock x:Name="Győzelem" HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="Nyertél"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="Győzelem" HorizontalAlignment="Center" Margin="224,43,223.857,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="Nyertél"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="StepCounter" HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="StepCounter_Copy" HorizontalAlignment="Center" Margin="0,400,0,2.2" TextWrapping="Wrap" Text="Megtett Lépések Száma" VerticalAlignment="Top" TextAlignment="Center" Width="148"/>
 
     </Grid>
 </Window>
