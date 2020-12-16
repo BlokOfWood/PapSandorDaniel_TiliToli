@@ -28,13 +28,33 @@ namespace tili_toli
             tiliToliElemek = elemTartó.Children;
             NewGame();
         }
-        void NewGame()
+        public void NewGame()
         {
             tilitoliState = new byte[,]{
-                {0,1,2},{3,4,5},{6,7,8}
+                {1,2,3},{4,5,6},{7,8,9}
             };
+            Shuffle();
 
             UpdateUI();
+        }
+
+        void Shuffle()
+        {
+            Random rnd = new Random();
+
+            for (int x = 0; x < 3; x++)
+            {
+                for(int y = 0; y < 3; y++)
+                {
+                    int[] shuffleTarget = { rnd.Next(0, 3), rnd.Next(0, 3) };
+
+                    byte a = tilitoliState[x, y];
+                    byte b = tilitoliState[shuffleTarget[0], shuffleTarget[1]];
+
+                    tilitoliState[shuffleTarget[0], shuffleTarget[1]] = a;
+                    tilitoliState[x, y] = b;
+                }
+            }
         }
 
         void UpdateUI()
@@ -48,7 +68,7 @@ namespace tili_toli
 
         private void newgame_Click(object sender, RoutedEventArgs e)
         {
-
+            NewGame();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
