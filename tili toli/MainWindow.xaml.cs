@@ -72,6 +72,45 @@ namespace tili_toli
             }
         }
 
+        void ButtonClick(int index)
+        {
+            int[] i = { index / 3, index % 3 };
+
+            if(i[0] != 0 && tilitoliState[i[0]-1, i[1]] == 0)
+            {
+                byte a = tilitoliState[i[0], i[1]];
+                byte b = tilitoliState[i[0] - 1, i[1]];
+
+                tilitoliState[i[0]-1, i[1]] = a;
+                tilitoliState[i[0], i[1]] = b;
+            }
+            else if (i[0] != 2 && tilitoliState[i[0] + 1, i[1]] == 0)
+            {
+                byte a = tilitoliState[i[0], i[1]];
+                byte b = tilitoliState[i[0] + 1, i[1]];
+
+                tilitoliState[i[0] + 1, i[1]] = a;
+                tilitoliState[i[0], i[1]] = b;
+            }
+            else if (i[1] != 0 && tilitoliState[i[0], i[1] - 1] == 0)
+            {
+                byte a = tilitoliState[i[0], i[1]];
+                byte b = tilitoliState[i[0], i[1] - 1];
+
+                tilitoliState[i[0], i[1] - 1] = a;
+                tilitoliState[i[0], i[1]] = b;
+            }
+            else if (i[1] != 2 && tilitoliState[i[0], i[1] + 1] == 0)
+            {
+                byte a = tilitoliState[i[0], i[1]];
+                byte b = tilitoliState[i[0], i[1] + 1];
+
+                tilitoliState[i[0], i[1] + 1] = a;
+                tilitoliState[i[0], i[1]] = b;
+            }
+            UpdateUI();
+        }
+
         private void newgame_Click(object sender, RoutedEventArgs e)
         {
             NewGame();
@@ -79,47 +118,48 @@ namespace tili_toli
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(0);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(1);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            ButtonClick(2);
 
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(3);
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(4);
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(5);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(6);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(7);
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-
+            ButtonClick(8);
         }
     }
 }
