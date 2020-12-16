@@ -9,15 +9,15 @@
     <Grid>
         <Button x:Name="newgame" Content="Új Játék" HorizontalAlignment="Left" Margin="163,10,0,0" VerticalAlignment="Top" Width="166" Click="newgame_Click"/>
         <Grid x:Name="elemTartó" HorizontalAlignment="Left" Height="323" Margin="11,64,0,0" VerticalAlignment="Top" Width="466">
-            <Button Content="Button" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="174,3,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="346,3,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="1,116,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="175,116,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="347,116,-1,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="174,226,0,0" VerticalAlignment="Top" Width="120" Height="97"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="346,226,0,0" VerticalAlignment="Top" Width="120" Height="97" RenderTransformOrigin="0.52,2.276"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="174,3,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_1"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="346,3,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_2"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="1,116,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_3"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="175,116,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_4"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="347,116,-1,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_5"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_6"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="174,226,0,0" VerticalAlignment="Top" Width="120" Height="97" Click="Button_Click_7"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="346,226,0,0" VerticalAlignment="Top" Width="120" Height="97" RenderTransformOrigin="0.52,2.276" Click="Button_Click_8"/>
         </Grid>
 
     </Grid>

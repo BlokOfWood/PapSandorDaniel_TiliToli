@@ -20,19 +20,75 @@ namespace tili_toli
     /// </summary>
     public partial class MainWindow : Window
     {
+        byte[,] tilitoliState;
         UIElementCollection tiliToliElemek;  
         public MainWindow()
         {
             InitializeComponent();
             tiliToliElemek = elemTartó.Children;
 
-            for (int i = 0; i < tiliToliElemek.Count; i++)
+            tilitoliState = new byte[,]{
+                {0,1,2},{3,4,5},{6,7,8}
+            };
+
+            UpdateUI();
+        }
+
+        void UpdateUI()
+        {
+            byte[] flatArray = tilitoliState.Cast<byte>().ToArray();
+            for(int i = 0; i < 9; i++)
             {
-                (tiliToliElemek[i] as Button).Content = (i + 1).ToString();
+                (tiliToliElemek[i] as Button).Content = flatArray[i].ToString();
             }
         }
 
         private void newgame_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
         {
 
         }
